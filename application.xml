@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+            <context:annotation-config/>
+  
+<!-- for loading properties file -->   
+<context:property-placeholder location="classpath:rough.properties" />    
+  
+ 
+
+   <!-- A simple bean definition -->
+   <bean id = "engine" class = "com.spring.core.Engine" init-method="myinit" scope="prototype" destroy-method="destroy" >
+   <property name="engoil" ref = "engineoil"></property>
+   <property name= "Carname" value="${myCarname}"></property>
+   
+   
+   </bean>
+   
+    <bean id = "engineoil" class = "com.spring.core.EngineOil">
+      <!-- collaborators and configuration for this bean go here -->
+   </bean>
+   
+     <bean id="customProcessor"
+    		class="com.spring.core.MyCustomBeanProcessor">
+   	</bean>
+   
+</beans>
