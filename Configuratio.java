@@ -13,6 +13,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @PropertySource("classpath:rough.properties")
 public class Configuratio {
 
+	//This code enables the property reading feature incase of spring 4.2 or lower
 	@Bean
     public static PropertySourcesPlaceholderConfigurer
                     propertySourcesPlaceHolderConfigurer() {
